@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resume | MB Portfolio</title><style>
+@font-face{font-family:'Bebas Neue';src:url(fonts/bebas-neue-latin-400-normal.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Arimo';font-weight:400;src:url(fonts/arimo-latin-400-normal.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Arimo';font-weight:700;src:url(fonts/arimo-latin-700-normal.woff2) format('woff2');font-display:block}
+@font-face{font-family:'Arimo';font-style:italic;src:url(fonts/arimo-latin-400-italic.woff2) format('woff2');font-display:block}
+
+:root{
+  --ink:#111111; --night:#1E1E1E; --charcoal:#2B2B2B; --heading:#3D3D3D; --body:#333333;
+  --muted:#5C5C5C; --line:#D9D9D9; --mist:#F2F2F2; --cream:#F8F3EF; --white:#FFFFFF;
+  --focus:#FFC83D; --r:12px; --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:Arimo,Arial,sans-serif;color:var(--body);background:var(--white);line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 48px}
+h1,h2,h3,.display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.02em;color:var(--heading);line-height:.95}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+svg{width:20px;height:20px;flex:none}
+
+/* nav */
+.nav{background:var(--night);color:#fff;position:sticky;top:0;z-index:5}
+.nav .wrap{display:flex;align-items:center;height:68px;gap:8px}
+.logo{font-family:'Bebas Neue';font-size:34px;letter-spacing:.06em;line-height:1;margin-right:auto;color:#fff}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{display:block;padding:10px 14px;font-size:15px;color:#E6E6E6;border-bottom:3px solid transparent}
+.nav-links a.active{color:#fff;font-weight:700;border-bottom-color:#fff}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;color:#fff}
+.menu-btn{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;border:2px solid var(--night)}
+.btn-primary{background:var(--night);color:#fff}
+.btn-secondary{background:transparent;color:var(--night)}
+.btn-light{background:#fff;color:var(--night);border-color:#fff}
+.btn svg{width:18px;height:18px}
+.link{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--night);text-decoration:underline;text-underline-offset:4px}
+.link svg{width:16px;height:16px}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tag{font-size:12px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px;background:var(--mist);color:var(--body)}
+.dark .tag,.tint .tag{background:#fff;color:var(--night)}
+.tint .tag{border:1px solid var(--line)}
+
+.media{border-radius:var(--r);overflow:hidden;background:var(--mist)}
+.media img{width:100%;height:100%;object-fit:cover}
+.media.contain img{object-fit:contain;padding:8%}
+
+/* hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:104px;color:var(--heading)}
+.hero .sub{margin:18px 0 16px;font-size:19px;font-weight:700;color:var(--muted)}
+.hero p.intro{font-size:17px;max-width:480px}
+.hero .ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.carousel .media{aspect-ratio:4/5;max-height:520px}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.dots span{width:10px;height:10px;border-radius:50%;background:#BDBDBD}
+.dots span.on{background:var(--night);width:28px;border-radius:5px}
+
+/* section heads */
+.section{padding:72px 0}
+.section.tint{background:var(--mist)}
+.section-head{text-align:center;margin-bottom:44px}
+.section-head h2{font-size:64px}
+.section-head p{color:var(--muted);margin-top:10px;font-size:17px}
+
+/* featured rows */
+.feature{display:grid;grid-template-columns:420px 1fr;gap:44px;align-items:center;padding:28px 0;border-top:1px solid var(--line)}
+.feature:first-of-type{border-top:0}
+.feature .media{aspect-ratio:16/9}
+.feature h3{font-size:52px;margin-bottom:10px}
+.feature p{font-size:16px;max-width:520px;margin-bottom:16px}
+.feature .tags{margin-bottom:18px}
+
+/* cards grid */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card .media{border-radius:0;aspect-ratio:16/9}
+.card .body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h3{font-size:38px}
+.card p{font-size:15px;color:var(--body)}
+.card .link{margin-top:auto}
+
+/* page title */
+.page-title{padding:64px 0 8px;text-align:center}
+.page-title h1{font-size:88px}
+.page-title p{color:var(--muted);font-size:17px;margin-top:8px}
+
+/* resume */
+.dark{background:var(--charcoal);color:#EDEDED}
+.dark h2,.dark h3{color:#fff}
+.resume{padding:72px 0}
+.resume .wrap{display:grid;grid-template-columns:340px 1fr;gap:56px}
+.resume .media{aspect-ratio:3/4;border-radius:var(--r)}
+.resume .who{margin-top:16px;font-weight:700;color:#fff}
+.resume .who span{display:block;font-weight:400;color:#CFCFCF;font-size:14px}
+.resume h2{font-size:56px;margin-bottom:12px}
+.resume p{font-size:16px;color:#E3E3E3;margin-bottom:34px;max-width:620px}
+.resume h3{font-size:30px;margin-bottom:10px}
+.skill-group{margin-bottom:18px}
+.skill-group .eyebrow{color:#CFCFCF;margin-bottom:8px}
+.resume-cta{padding:40px 0;text-align:center;background:var(--mist)}
+
+/* more */
+.banner{background:var(--night);color:#fff;text-align:center;padding:72px 0}
+.banner h1{color:#fff;font-size:88px}
+.banner p{color:#D6D6D6;margin-top:12px;font-size:17px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tile .media{aspect-ratio:1/1;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#6B6058;border:1px dashed #CDBFB3}
+.tile .media svg{width:40px;height:40px}
+.tile .media b{font-size:12px;letter-spacing:.12em}
+.tile h4{font-size:16px;margin-top:12px;color:var(--heading)}
+.tile small{color:var(--muted);font-size:13px}
+.group-title{font-size:44px;margin:0 0 22px}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;padding-top:24px;padding-bottom:72px}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.contact-list li a{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--line);border-radius:14px;font-weight:700}
+.contact-list .ic{width:44px;height:44px;border-radius:50%;background:var(--night);color:#fff;display:flex;align-items:center;justify-content:center}
+.contact-list small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+form{background:var(--mist);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:18px}
+label{font-weight:700;font-size:14px;display:flex;flex-direction:column;gap:8px;color:var(--heading)}
+input,textarea{font:inherit;font-weight:400;border:1.5px solid #8C8C8C;border-radius:10px;padding:13px 14px;background:#fff;color:var(--body)}
+textarea{min-height:130px;resize:none}
+input.focus{outline:3px solid var(--focus);outline-offset:2px;border-color:var(--night)}
+.hint{font-weight:400;font-size:13px;color:var(--muted)}
+
+/* details */
+.crumb{padding:28px 0 0}
+.detail-hero{padding:20px 0 56px}
+.detail-hero .media{aspect-ratio:21/9}
+.detail-hero.contain .media{background:#fff;border:1px solid var(--line)}
+.detail-body .wrap{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;padding-bottom:80px}
+.detail-body h1{font-size:88px;margin-bottom:18px}
+.detail-body p{font-size:17px;margin-bottom:18px}
+.facts{background:var(--mist);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:18px;align-self:start}
+.facts dt{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts dd{font-weight:700;color:var(--heading)}
+
+/* footer */
+.footer{background:var(--night);color:#E6E6E6;padding:40px 0}
+.footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer .eyebrow{color:#fff}
+.footer .lines{display:flex;gap:28px;flex-wrap:wrap;font-size:15px}
+.footer .lines a{display:flex;align-items:center;gap:8px}
+.socials{display:flex;gap:10px}
+.socials a{width:44px;height:44px;border-radius:50%;border:1.5px solid #8C8C8C;display:flex;align-items:center;justify-content:center;color:#fff}
+.footer .copy{width:100%;font-size:13px;color:#BDBDBD;border-top:1px solid #3A3A3A;padding-top:18px;margin-top:4px}
+
+/* early stage: grey blocks instead of images, no polish */
+.early .media img{display:none}
+.early .media{background:#CFCFCF !important}
+.early .tag,.early .socials,.early .btn svg{display:none}
+.early .btn{border-radius:4px}
+
+/* ---------- mobile ---------- */
+@media (max-width:700px){
+  .wrap{padding:0 20px}
+  .nav .wrap{height:60px}
+  .nav-links{display:none}
+  .search-desk{margin-right:-10px}
+  .menu-btn{display:inline-flex;margin-left:-10px}
+  .logo{font-size:30px;margin-right:auto}
+  .hero{padding:32px 0 40px}
+  .hero .wrap{grid-template-columns:1fr;gap:28px}
+  .hero h1{font-size:68px}
+  .hero .sub{font-size:16px}
+  .hero p.intro{font-size:16px}
+  .hero .ctas .btn{flex:1;justify-content:center}
+  .carousel{order:2}
+  .carousel .media{aspect-ratio:4/3}
+  .section{padding:44px 0}
+  .section-head h2{font-size:48px}
+  .feature{grid-template-columns:1fr;gap:16px;padding:22px 0}
+  .feature h3{font-size:40px}
+  .page-title{padding:36px 0 4px}
+  .page-title h1{font-size:60px}
+  .grid2{grid-template-columns:1fr;gap:22px}
+  .card h3{font-size:34px}
+  .resume{padding:36px 0}
+  .resume .wrap{grid-template-columns:1fr;gap:28px}
+  .resume .media{aspect-ratio:4/3}
+  .resume h2{font-size:44px}
+  .resume p{margin-bottom:24px}
+  .footer .wrap{flex-direction:column;align-items:flex-start;gap:16px}
+  .footer .lines{flex-direction:column;gap:10px}
+}
+</style><style>
+input:focus,textarea:focus{outline:3px solid #FFC83D;outline-offset:2px;border-color:#1E1E1E}
+@media (max-width:700px){
+ .nav.open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:60px;left:0;right:0;background:#1E1E1E;padding:6px 20px 16px;box-shadow:0 10px 20px rgba(0,0,0,.3)}
+ .nav.open .nav-links a{padding:14px 4px;font-size:17px;border-bottom:1px solid #333}
+ .nav.open .nav-links a.active{border-bottom:1px solid #333;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
+}
+</style></head><body>
+<header class="nav"><div class="wrap">
+<a class="icon-btn menu-btn" href="#" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
+<a class="logo" href="index.html" aria-label="MB, Michie Bello, home">MB</a>
+<nav aria-label="Main"><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="resume.html" class="active" aria-current="page">Resume</a></li><li><a href="more.html">More</a></li></ul></nav>
+<a class="icon-btn search-desk" href="#" aria-label="Search this site"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></a>
+</div></header><main>
+<section class="resume dark"><div class="wrap">
+<div><div class="media"><img src="img/photo.png" alt="Michie Monroe T. Bello playing guitar on stage"></div>
+<p class="who">Michie Monroe T. Bello<span>ICT-CCT · University of the Cordilleras</span></p></div>
+<div><h2>About Me</h2><p>I am an ICT-CCT student at the University of the Cordilleras. I am interested in 3D modeling and coding, and I enjoy exploring how technology can be used to create interactive and visually engaging projects. I am continuously working on improving my technical skills, particularly in programming and digital design, as I aim to build innovative solutions and expand my knowledge in the field of information technology.</p>
+<h2>Career Goals</h2><p>My goals are few but big. My biggest goal is to work outside the Philippines, because I see great potential for the ICT field abroad. Secondly, I want to learn more languages like C++ so that I can be more versatile in what I am capable of doing. Lastly, I want to work for a company where I have freedom over my time as well as good pay.</p>
+<h3>Skills &amp; Tools</h3>
+<div class="skill-group"><p class="eyebrow" style="margin:0 0 8px">Languages</p><ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li></ul></div>
+<div class="skill-group"><p class="eyebrow" style="margin:0 0 8px">Tools and apps</p><ul class="tags"><li class="tag">VS Code</li><li class="tag">Blender</li><li class="tag">Tinkercad</li></ul></div>
+</div></div></section>
+<section class="resume-cta"><div class="wrap"><a class="btn btn-primary" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Download my resume (PDF)</a></div></section></main><footer class="footer"><div class="wrap">
+<span class="eyebrow">Contact</span>
+<div class="lines"><a href="mailto:monmonpatamon13@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 6.5 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>monmonpatamon13@gmail.com</a><a href="tel:09702005465"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4-1.9 1.4a12 12 0 0 0 6.4 6.4l1.4-1.9 4 1.4v2.6a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>0970 200 5465</a></div>
+<div class="socials"><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.4h2.5V21H14v-6.6h2.4l.6-3.4h-3V9a.5.5 0 0 1 .5-.5Z" fill="currentColor"/></svg></a><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3.4" height="11" fill="currentColor"/><circle cx="5.7" cy="5.7" r="2" fill="currentColor"/><path d="M10 9h3.2v1.6c.6-1 1.8-1.9 3.6-1.9 3 0 3.7 2 3.7 4.6V20h-3.4v-5.9c0-1.4-.3-2.6-1.8-2.6s-2 1.1-2 2.6V20H10Z" fill="currentColor"/></svg></a></div>
+<div class="copy">© 2026 Michie Monroe T. Bello</div>
+</div></footer>
+<script>
+(function(){var nav=document.querySelector('.nav'),btn=document.querySelector('.menu-btn');
+if(!nav||!btn)return;btn.setAttribute('aria-expanded','false');
+btn.addEventListener('click',function(e){e.preventDefault();var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.focus();}});
+var f=document.querySelector('form[aria-label="Send a message"]');
+if(f)f.addEventListener('submit',function(e){e.preventDefault();var n=f.elements.name.value,m=f.elements.email.value,t=f.elements.message.value;
+location.href='mailto:monmonpatamon13@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(t+'\n\nReply to: '+m);});
+})();
+</script></body></html>
